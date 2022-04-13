@@ -143,7 +143,7 @@ Shows the help page for expenditure related commands.
 
 ````
 > help /e
-------------------------------==-Expenditure Help Page-----------------------------------
+-------------------------------Expenditure Help Page----------------------------------
 1. Listing all Expenditures: list /e {DATE}
 2. Adding an Expenditure entry: add /e /pm [PAYMENT_METHOD] /c [CATEGORY] 
    /d [DESCRIPTION] /a [AMOUNT] /t [DATE]
@@ -152,7 +152,7 @@ Shows the help page for expenditure related commands.
    /c [NEW_CATEGORY] /d [NEW_DESCRIPTION] /a [NEW_AMOUNT] /t [NEW_DATE]
 5. Removing an Expenditure entry: delete /e [INDEX]
 6. Exiting the program: bye
------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 ````
 
 <br/>
@@ -406,14 +406,15 @@ Shows the help page for credit card related commands.
 
 ````
 > help /cc
--------------------------------Credit Card Help Page-------------------------------------
+-----------------------------Credit Card Help Page------------------------------------
 1. Listing all Credit Cards: list /cc
-2. Adding a Credit Card: add /cc /n [CREDIT_CARD_NAME] /cb [CASHBACK] /cl [CREDIT_LIMIT]
+2. Adding a Credit Card: add /cc /n [CREDIT_CARD_NAME] /cb [CASHBACK] 
+   /cl [CREDIT_LIMIT]
 3. Updating a Credit Card: update /cc [INDEX] /n [NEW_NAME] /cb [NEW_CASHBACK] 
    /cl [NEW_CREDIT_LIMIT]
 4. Removing a credit card: delete /cc [INDEX]
 5. Exiting the program: bye
------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 ````
 
 <br/>
