@@ -143,14 +143,16 @@ Shows the help page for expenditure related commands.
 
 ````
 > help /e
----------------------------------------Expenditure Help Page---------------------------------------
+---------------------------------Expenditure Help Page--------------------------------------
 1. Listing all Expenditures: list /e {DATE}
-2. Adding an Expenditure entry: add /e /pm [PAYMENT_METHOD] /c [CATEGORY] /d [DESCRIPTION] /a [AMOUNT] /t [DATE]
+2. Adding an Expenditure entry: add /e /pm [PAYMENT_METHOD] /c [CATEGORY] 
+   /d [DESCRIPTION] /a [AMOUNT] /t [DATE]
 3. Calculating the total expenditure in a month: calculate /epm [DATE]
-4. Updating an Expenditure: update /e [NEW_INDEX] /pm [NEW_PAYMENT_METHOD] /c [NEW_CATEGORY] /d [NEW_DESCRIPTION] /a [NEW_AMOUNT] /t [NEW_DATE]
+4. Updating an Expenditure: update /e [NEW_INDEX] /pm [NEW_PAYMENT_METHOD] 
+   /c [NEW_CATEGORY] /d [NEW_DESCRIPTION] /a [NEW_AMOUNT] /t [NEW_DATE]
 5. Removing an Expenditure entry: delete /e [INDEX]
 6. Exiting the program: bye
----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 ````
 
 <br/>
@@ -404,13 +406,14 @@ Shows the help page for credit card related commands.
 
 ````
 > help /cc
----------------------------------------Credit Card Help Page---------------------------------------
+---------------------------------Credit Card Help Page--------------------------------------
 1. Listing all Credit Cards: list /cc
 2. Adding a Credit Card: add /cc /n [CREDIT_CARD_NAME] /cb [CASHBACK] /cl [CREDIT_LIMIT]
-3. Updating a Credit Card: update /cc [INDEX] /n [NEW_NAME] /cb [NEW_CASHBACK] /cl [NEW_CREDIT_LIMIT]
+3. Updating a Credit Card: update /cc [INDEX] /n [NEW_NAME] /cb [NEW_CASHBACK] 
+   /cl [NEW_CREDIT_LIMIT]
 4. Removing a credit card: delete /cc [INDEX]
 5. Exiting the program: bye
----------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
 ````
 
 <br/>
@@ -475,7 +478,8 @@ Lists all your credit cards.
 ````
 > list /cc
 -----------------------------------------------
-1. Name: dbs [Cashback: 2.00%] [Cashback gained: $0.00] [Card limit: $1000.00] [Balance left: $1000.00]
+1. Name: dbs [Cashback: 2.00%] [Cashback gained: $0.00] [Card limit: $1000.00] 
+   [Balance left: $1000.00]
 -----------------------------------------------
 ````
 
@@ -508,12 +512,14 @@ of $500.
 ````
 > list /cc
 -----------------------------------------------
-1. Name: dbs [Cashback: 2.00%] [Cashback gained: $0.00] [Card limit: $1000.00] [Balance left: $1000.00]
+1. Name: dbs [Cashback: 2.00%] [Cashback gained: $0.00] [Card limit: $1000.00] 
+   [Balance left: $1000.00]
 -----------------------------------------------
 
 > update /cc 1 /n OCBC /cb 1.5 /cl 500
 Successfully set credit card 1 to:
-Name: OCBC [Cashback: 1.50%] [Cashback gained: $0.00] [Card limit: $500.00] [Card balance: $500.00]
+Name: OCBC [Cashback: 1.50%] [Cashback gained: $0.00] [Card limit: $500.00] 
+      [Card balance: $500.00]
 ````
 
 > **💡 Note:**
@@ -550,7 +556,8 @@ Deletes the first credit card on your credit card list.
 ````
 > list /cc
 -----------------------------------------------
-1. Name: OCBC [Cashback: 1.50%] [Cashback gained: $0.00] [Card limit: $500.00] [Balance left: $500.00]
+1. Name: OCBC [Cashback: 1.50%] [Cashback gained: $0.00] [Card limit: $500.00] 
+   [Balance left: $500.00]
 -----------------------------------------------
 
 > delete /cc 1
@@ -799,14 +806,20 @@ Here is an example of a valid save file:
 
 ```
 # BEGIN EXPENDITURES
- "amount": "3.0"  "description": "Commute"  "paymentMethod": "Cash"  "time": "08/03/2022"  "category": "Transport" 
- "amount": "1.0"  "description": "Mala"  "paymentMethod": "DBS"  "time": "30/03/2022"  "category": "Food" 
- "amount": "1.0"  "description": "Chicken rice"  "paymentMethod": "DBS"  "time": "30/03/2022"  "category": "Food"
- "amount": "1.0"  "description": "Katsudon"  "paymentMethod": "Cash"  "time": "07/03/2022"  "category": "Food"
+ "amount": "3.0"  "description": "Commute"  "paymentMethod": "Cash"  
+ "time": "08/03/2022"  "category": "Transport" 
+ "amount": "1.0"  "description": "Mala"  "paymentMethod": "DBS"  
+ "time": "30/03/2022"  "category": "Food" 
+ "amount": "1.0"  "description": "Chicken rice"  "paymentMethod": "DBS"  
+ "time": "30/03/2022"  "category": "Food"
+ "amount": "1.0"  "description": "Katsudon"  "paymentMethod": "Cash"  
+ "time": "07/03/2022"  "category": "Food"
 # END EXPENDITURES
 # BEGIN CREDIT CARDS
- "totalExpenditure": "2.0"  "monthlyCardLimit": "10000.0"  "nameOfCard": "DBS"  "cashback": "1.0"
- "totalExpenditure": "0.0"  "monthlyCardLimit": "20000.0"  "nameOfCard": "OCBC"  "cashback": "4.0"
+ "totalExpenditure": "2.0"  "monthlyCardLimit": "10000.0"  "nameOfCard": "DBS"  
+ "cashback": "1.0"
+ "totalExpenditure": "0.0"  "monthlyCardLimit": "20000.0"  "nameOfCard": "OCBC"  
+ "cashback": "4.0"
 # END CREDIT CARDS
 # BEGIN INCOME SOURCES
  "amount": "200"  "category": "Allowance"
