@@ -28,7 +28,6 @@
         * [Remove an income: `delete`](#remove-an-income-delete)
     * [Exit MindMyMoney application: `bye`](#exit-mindmymoney-application-bye)
     * [Save the data](#save-the-data)
-      * [Editing the Save File](#editing-the-save-file)
 * [FAQ](#faq)
 * [Command summary (Expenditure)](#command-summary-expenditure)
 * [Command summary (Credit Card)](#command-summary-credit-card)
@@ -758,8 +757,7 @@ Bye, hope to see you again!
 ## Save the Data
 
 Your MindMyMoney data is saved in the hard disk automatically after any command that changes the data. There is no need
-for you to save manually. You can view the saved contents of MindMyMoney by reading the `data.txt` file in your current
-directory.
+for you to save manually. You can view the saved contents of MindMyMoney by reading the `data.txt` file in your _home folder_.
 
 > **💡 Note:**
 >- If you wish to back up your MindMyMoney data, you can copy the `data.txt` file into the folder you want to save it in.
