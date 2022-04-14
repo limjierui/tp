@@ -19,7 +19,6 @@
         * [Display credit cards: `list` ](#display-credit-cards-list)
         * [Modify a credit card: `update`](#modify-a-credit-card-update)
         * [Remove a credit card: `delete`](#remove-a-credit-card-delete)
-        * [Calculate cashback: `calculate` [coming in v3.0]](#calculate-cashback-calculate-coming-in-v30)
     * [Income](#income)
         * [Display help page for incomes: `help`](#display-help-page-for-incomes-help)
         * [Add an income: `add`](#add-an-income-add)
@@ -28,7 +27,6 @@
         * [Remove an income: `delete`](#remove-an-income-delete)
     * [Exit MindMyMoney application: `bye`](#exit-mindmymoney-application-bye)
     * [Save the data](#save-the-data)
-      * [Editing the Save File](#editing-the-save-file)
 * [FAQ](#faq)
 * [Command summary (Expenditure)](#command-summary-expenditure)
 * [Command summary (Credit Card)](#command-summary-credit-card)
@@ -40,7 +38,7 @@
 
 `MindMyMoney` (M<sup>3</sup>) is a desktop application for managing your personal finances, optimized for use via a
 Command Line Interface (CLI). You can use it to track your expenditures across multiple payment methods, calculate
-monthly expenditure, and track your income. If you are a student looking to manage your personal finances, this
+monthly expenditure, and track your income. If you are a thrifty student looking to manage your personal finances, this
 application is for you!
 
 ### Using the User Guide
@@ -82,10 +80,9 @@ What can I do for you?
 5. Type the command in the command box and press Enter to execute it. For example: typing **`help`** and pressing Enter
    will show a help page. <br> Some example commands you can try: <br>
     * **`add`**`/e /pm cash /c Food /d Porridge /a 3 /t 12/03/2022` :
-      Adds a $3 expenditure of the description 'Porridge' that was paid in cash on 12 March 2022 to your list of
-      expenditures.
-    * **`list /e`** : Lists all expenditures.
-    * **`calculate`**`/epm 03/2022` : Calculates the total expenditure in the month of March 2022.
+      Adds a $3 expenditure of the description 'Porridge' that was paid in cash on 12 March 2022 to your expenditure list.
+    * **`list /e`** : Lists all entries in your expenditure list.
+    * **`calculate`**`/epm 03/2022` : Calculates your total expenditure in the month of March 2022.
     * **`update`**`/e 1 /pm cash /c Food /d Chicken Rice /a 4.50 /t 12/03/2022` :
       Updates the first expenditure on your expenditure list to reflect a $4.50 expenditure of the description 'Chicken
       Rice' that was paid in cash on 12 March 2022.
@@ -163,16 +160,16 @@ Adds an expenditure into your expenditure list. Only **one** expenditure can be 
 
 #### Format: `add /e /pm [PAYMENT_METHOD] /c [CATEGORY] /d [DESCRIPTION] /a [AMOUNT] /t [DATE]`
 
-* `[PAYMENT_METHOD]` refers to the method of payment used.
+* `[PAYMENT_METHOD]` refers to your method of payment used.
     * Enter `cash` or the name of a credit card you have saved.
-* `[CATEGORY]` refers to the supported categories of expenditure.
+* `[CATEGORY]` refers to the supported categories of your expenditure.
     * Enter `Food`, `Transport`, `Utilities`, `Personal`, `Entertainment` or `Others`.
-* `[DESCRIPTION]` refers to the description of the expenditure.
+* `[DESCRIPTION]` refers to the description of your expenditure.
     * For example: `Porridge`.
-* `[AMOUNT]` refers to the cost of the expenditure.
+* `[AMOUNT]` refers to the cost of your expenditure.
     * Enter the amount in dollars, rounded off to the nearest cent.
     * For example: an item that cost $420.69 will be entered as `420.69`.
-* `[DATE]` refers to the date of the purchase of the expenditure.
+* `[DATE]` refers to the date of the purchase of your expenditure.
     * Format of the date is `dd/mm/yyyy`.
     * For example: `12 March 2022` will be entered as `12/03/2022`.
 
@@ -202,10 +199,9 @@ into the account
 
 
 > **⚠️Warning⚠️**
->- `[CATEGORY]`: Any input that is not `Food`, `Transport`, `Utilities`, `Personal`, `Entertainment` or `Others` will be rejected.
->- `[DATE]` not in the format of `dd/mm/yyyy` will be rejected.
->- Input dates later than the current date will be rejected.
->- Illogical input dates will be rejected.
+>- `[CATEGORY]` that is not `Food`, `Transport`, `Utilities`, `Personal`, `Entertainment` or `Others` will be rejected.
+>- `[DATE]` that is invalid and not in the format of `dd/mm/yyyy` will be rejected.
+>- `[DATE]` later than the current date will be rejected.
 
 <br/>
 
@@ -272,25 +268,25 @@ Use the `list /e` command to view the indexes of your expenditures.
 
 #### Format: `update /e [INDEX] /pm [NEW_PAYMENT_METHOD] /c [NEW_CATEGORY] /d [NEW_DESCRIPTION] /a [NEW_AMOUNT] /t [NEW_DATE]`
 
-* `[INDEX]` refers to the index of expenditure in list in which you want to update.
-    * Enter `1` if you want to update the first expenditure in your list.
-* `[NEW_PAYMENT_METHOD]` refers to the new method of payment used.
+* `[INDEX]` refers to the index of the entries in your expenditure list in which you want to update.
+    * Enter `1` if you want to update the first expenditure in your expenditure list.
+* `[NEW_PAYMENT_METHOD]` refers to your new method of payment used.
     * Enter `cash` or the name of a credit card you have saved.
-* `[NEW_CATEGORY]` refers to the new category of the expenditure.
+* `[NEW_CATEGORY]` refers to the new category of your expenditure.
     * Enter `Food`, `Transport`, `Utilities`, `Personal`, `Entertainment` or `Others`.
-* `[NEW_DESCRIPTION]` refers to the new description of the expenditure.
+* `[NEW_DESCRIPTION]` refers to the new description of your expenditure.
     * For example: `Chicken rice`.
-* `[NEW_AMOUNT]` refers to the updated of the expenditure.
+* `[NEW_AMOUNT]` refers to the updated amount of your expenditure.
     * Enter the amount in dollars, rounded off to the nearest cent.
     * For example: an item that cost $420.69 will be entered as `420.69`.
-* `[NEW_DATE]` refers to the new date of the purchase of the expenditure.
+* `[NEW_DATE]` refers to the new date of the purchase of your expenditure.
     * Format of the date is `dd/mm/yyyy`.
     * For example: `12 March 2022` will be entered as `12/03/2022`.
 
 #### Expected Outcome:
 
 For example: `update /e 1 /pm cash /c Food /d chicken rice /a 5 /t 12/03/2022`.  <br/>
-Updates the first expenditure in your list to a $5.00 expenditure on food item 'chicken rice' that was paid in cash on 12
+Updates the first expenditure in your expenditure list to a $5.00 expenditure on food item 'chicken rice' that was paid in cash on 12
 March 2022.
 
 ````
@@ -310,15 +306,14 @@ $5.00 was spent on chicken rice(Food) using Cash [12/03/2022]
 > **💡 Note:**
 > - This command is similar to the [add an expenditure](#add-an-expenditure-add) command.
 >  - Parameters that are labeled starting with NEW follow the same restrictions
-  in [add an expenditure](#add-an-expenditure-add).
->  -  For example: `[NEW_CATEGORY]` is **case-insensitive**, similar to `[CATEGORY]`
-> - `[INDEX]` is based on the list generated from `list /e`, **not** the other variations of `list /e {DATE}`.
->- Only enter `[INDEX]` that exist in the expenditure list. For example: if you have 4 expenditures in your list, specify `[INDEX]` to be a number from 1 to 4.
+     in [add an expenditure](#add-an-expenditure-add). For example: `[NEW_CATEGORY]` is **case-insensitive**, similar to `[CATEGORY]`
+> - `[INDEX]` is based on the expenditure list generated from `list /e`, **not** the other variations of `list /e {DATE}`.
+>- Only enter `[INDEX]` that exist in the expenditure list. For example: if you have 4 expenditures in your expenditure list, specify `[INDEX]` to be a number from 1 to 4.
 
 > **⚠️Warning⚠️**
-> - `[NEW_CATEGORY]`: Any input not in the accepted list of categories will be rejected.
+> - `[NEW_CATEGORY]` not in `Food`, `Transport`, `Utilities`, `Personal`, `Entertainment` or `Others` will be rejected.
 > - `[NEW_DATE]` not in the format of `dd/mm/yyyy` will be rejected.
-> - Input dates later than the current date will be rejected.
+> - `[NEW_DATE]` later than the current date will be rejected.
 
 <br/>
 
@@ -329,7 +324,7 @@ Use the `list /e` command to view the current indexes of your expenditures.
 
 #### Format: `delete /e [INDEX]`
 
-* `[INDEX]` refers to the index of expenditure in list in which you want to delete.
+* `[INDEX]` refers to the index of the entries in your expenditure list in which you want to delete.
 
 #### Expected Outcome:
 
@@ -350,7 +345,7 @@ I have removed Nike Shoes of $300.00 from the account
 ````
 
 > **💡 Note:**
->- Only enter `[INDEX]` that exist in your list. For example: if you have 4 expenditures in your list, specify `[INDEX]` to be a number from 1 to 4.
+>- Only enter `[INDEX]` that exist in your expenditure list. For example: if you have 4 expenditures in your list, specify `[INDEX]` to be a number from 1 to 4.
 >- `[INDEX]` is based on the list generated from `list /e`, **not** the other variations of `list /e {DATE}`.
 >- Do not use `delete /e` when your expenditure list is empty.
 
@@ -385,7 +380,7 @@ OTHERS:         [0.0%]
 ````
 
 > **💡 Note**
-> - An error will be shown if the date that you would like to calculate is not found in the expenditure list.
+> - An error will be shown if `[DATE]` is not found in the expenditure list.
 
 <br/>
 
@@ -460,7 +455,7 @@ into the account
 > - You are not allowed to add 2 credit cards with the same in `[CREDIT_CARD_NAME]`. Instead, you can abbreviate the cards differently.
 >  - For example: If you have two DBS credit cards, you can enter the `[CREDIT_CARD_NAME]` of the first card to be `DBS_one` and the other as `DBS_two`.
 >- `[CASHBACK]` cannot be more than 100%.
->- `[CARD_LIMIT]` cannot be more than $40,000. Generally, students should not have a monthly income of more than
+>- `[CARD_LIMIT]` cannot be more than 40000. Generally, students should not have a monthly income of more than
 > $10,000, and hence a monthly credit card limit of $40,000 calculated through [here](https://www.moneysmart.sg/credit-cards/credit-limit-singapore-ms).
 
 <br/>
@@ -493,12 +488,12 @@ Use the `list /cc` command to view the current indexes of your credit cards.
 
 #### Format: `update /cc [INDEX] /n [NEW_NAME] /cb [NEW_CASHBACK] /cl [NEW_CARD_LIMIT]`
 
-* `[INDEX]` refers to the index of credit card in list in which you want to update.
+* `[INDEX]` refers to the index of the entries in your credit card list in which you want to update.
     * Enter `1` if you want to update the first credit card in your list.
 * `[NEW_NAME]` refers to the name your Credit Card will be updated to.
     * Use abbreviations for ease of adding expenditures to this credit card. For example:
       storing `DBS Live Fresh Credit Card` as `DBS LF`.
-* `[NEW_CASHBACK]` refers to the updated amount of cash back received when spending on the credit card.
+* `[NEW_CASHBACK]` refers to the updated amount of cash back received when you spend using the credit card.
     * Enter the amount of cashback in percentage.
     * For example: a credit card with `2% cashback` can be represented as `/cb 2`.
 * `[NEW_CARD_LIMIT]` refers to the updated maximum monthly expenditure on this credit card.
@@ -528,8 +523,7 @@ Name: OCBC [Cashback: 1.50%] [Cashback gained: $0.00] [Card limit: $500.00]
 >  - Parameters that are labeled starting with NEW follow the same restrictions
   in [add a credit card](#add-a-credit-card-add).
 >  - For example: `[NEW_NAME]` can be abbreviated like `[CREDIT_CARD_NAME]`.
-> - Only enter `[INDEX]` that exist in your list. For example if you have 4 items in the credit card list, specify `[INDEX]` to be a number from 1 to 4.
-> - You are **not allowed** to update the spending limit to an amount below what you have already spent using this card.
+> - Only enter `[INDEX]` that exist in your credit card list. For example if you have 4 items in the credit card list, specify `[INDEX]` to be a number from 1 to 4.> - You are **not allowed** to update the spending limit to an amount below what you have already spent using this card.
 >  - For Example: You have already spent $500 using the card. You will not be allowed to update the spending limit to a
   > number less than $500.
 
@@ -547,7 +541,7 @@ Use the `list /cc` command to view the current indexes of your credit cards.
 #### Format: `delete /cc [INDEX]`
 
 * `[INDEX]` refers to the index of credit card in your credit card list in which you want to delete.
-    * Enter `2` if you want to delete the second credit card in your credit card list.
+    * Enter `1` if you want to delete the first credit card in your credit card list.
 
 #### Expected Outcome
 
@@ -566,14 +560,8 @@ I have removed OCBC from your list of credit card(s).
 ````
 
 > **💡 Note:**
->- Only enter `[INDEX]` that exist in your list. For example: if you have 4 credit cards in your list, specify `[INDEX]` to be a number from 1 to 4.
+>- Only enter `[INDEX]` that exist in your credit card list. For example: if you have 4 credit cards in your credit card list, specify `[INDEX]` to be a number from 1 to 4.
 >- Do not use `delete /cc` when your credit card list is empty.
-
-<br/>
-
-### Calculate cashback: `calculate` [coming in v3.0]
-
-Details coming soon...
 
 <br/>
 
@@ -633,8 +621,8 @@ into the account
 >- `[CATEGORY]` is **case-insensitive**.
 
 > **⚠️Warning⚠️**
->- `[CATEGORY]`: Any input that is not `Salary`, `Allowance`, `Investment` or `Others` will be rejected.
->- `[AMOUNT]`: Takes in whole numbers as an input.
+>- Any input in `[CATEGORY]` that is not `Salary`, `Allowance`, `Investment` or `Others` will be rejected.
+>- `[AMOUNT]` takes in whole numbers as an input.
    > Round off your income to the nearest whole number when entering it into MindMyMoney.
 
 <br/>
@@ -667,8 +655,8 @@ Use the `list /i` command to view the current indexes of your income entries.
 
 #### Format: `update /i [INDEX] /a [NEW_AMOUNT] /c [NEW_CATEGORY]`
 
-* `[INDEX]` refers to the index of income in list in which you want to update.
-    * Enter `1` if you want to update the first entry in the list.
+* `[INDEX]` refers to the index of the entries in your income list in which you want to update.
+    * Enter `1` if you want to update the first entry in the income list.
 * `[NEW_AMOUNT]` refers to the updated monthly sum received, as a whole number.
 * `[NEW_CATEGORY]` refers to the supported categories of income.
     * Enter `Salary`, `Allowance`, `Investment` or `Others`.
@@ -696,10 +684,10 @@ Category: Salary
 >  - Fields that are labeled starting with NEW follow the same restrictions in [add an income](#add-an-income-add).
 >  - For example: `[NEW_AMOUNT]` input has to be a whole number, similar to `[AMOUNT]`.
 >- `[CATEGORY]` is **case-insensitive**.
-> - Only enter `[INDEX]` that exist in your list. For example: if you have 4 incomes in your income list, specify `[INDEX]` to be a number from 1 to 4.
+> - Only enter `[INDEX]` that exist in your income list. For example: if you have 4 incomes in your income list, specify `[INDEX]` to be a number from 1 to 4.
 
 > **⚠️Warning⚠️**
-> - `[NEW_CATEGORY]`: Any input not in the accepted list of categories will be rejected.
+> - Any input in `[NEW_CATEGORY]` not in the accepted income list of categories will be rejected.
 <br/>
 
 ### Remove an income: `delete`
@@ -709,7 +697,7 @@ Use the `list /i` command to view the current indexes of your income entries.
 
 #### Format: `delete /i [INDEX]`
 
-* `[INDEX]` refers to the index of income in your income list you want to delete.
+* `[INDEX]` refers to the index of the entries in your income list you want to delete.
     * Enter `1` if you want to delete the first income in your income list.
 
 #### Expected Outcome:
@@ -729,7 +717,7 @@ I have removed Salary from your list of income(s).
 ````
 
 > **💡 Note:**
->- Only enter `[INDEX]` that exist in your list. For example: if you have 4 incomes in your income list, specify `[INDEX]` to be a number from 1 to 4.
+>- Only enter `[INDEX]` that exist in your income list. For example: if you have 4 incomes in your income list, specify `[INDEX]` to be a number from 1 to 4.
 >- Do not use `delete /i` when your income list is empty.
 
 <br/>
@@ -758,77 +746,11 @@ Bye, hope to see you again!
 ## Save the Data
 
 Your MindMyMoney data is saved in the hard disk automatically after any command that changes the data. There is no need
-for you to save manually. You can view the saved contents of MindMyMoney by reading the `data.txt` file in your current
-directory.
+for you to save manually. You can view the saved contents of MindMyMoney by reading the `data.txt` file in your _home folder_.
 
 > **💡 Note:**
 >- If you wish to back up your MindMyMoney data, you can copy the `data.txt` file into the folder you want to save it in.
 >- To load the backup data into MindMyMoney, copy `data.txt` from the backup folder into the folder containing MindMyMoney, replacing the existing copy of `data.txt`.
-
-### Editing the Save File
-If you are experienced in using MindMyMoney, you may wish to directly edit the `data.txt` file. Below is a short
-description of its format.
-
-> **⚠️Warning⚠️**
->- Be careful when modifying `data.txt` to follow the correct format, since doing so can corrupt the data in MindMyMoney.
-   > When in doubt, keep a backup, as stated above. If you are less experienced, you may use the `update` and `add`
-   > commands to edit the data.
-   <br/>
-
-`data.txt` must contain the following six lines, in this order:
-
-```
-# BEGIN EXPENDITURES
-# END EXPENDITURES
-# BEGIN CREDIT CARDS
-# END CREDIT CARDS
-# BEGIN INCOME SOURCES
-# END INCOME SOURCES
-```
-
-Each expenditure, credit card, and income is stored in one line between their respective `BEGIN`/`END` lines. No line
-should be left blank.
-
-Each piece of data is stored as a series of `key : value` pairs, separated by spaces. Both `key` and `value`
-are enclosed in quotes. A `\"` in a key or value represents a quotation mark, while a `\\` represents a backslash.
-
-The following are the keys required for each type of data:
-
-- Expenditures contain `amount`, `description`, `paymentMethod`, `time`, and `category` keys.
-- Credit cards contain `totalExpenditure`, `monthlyCardLimit`, `nameOfCard`, and `cashback` keys.
-- Incomes contain `amount` and `category` fields.
-
-Their meanings are the same as in the `add` commands. The `totalExpenditure` key of a credit card contains the total
-amount spent using that credit card.
-
-If a key is missing, MindMyMoney will consider the save file invalid.
-
-Here is an example of a valid save file:
-
-```
-# BEGIN EXPENDITURES
- "amount": "3.0"  "description": "Commute"  "paymentMethod": "Cash"  
- "time": "08/03/2022"  "category": "Transport" 
- "amount": "1.0"  "description": "Mala"  "paymentMethod": "DBS"  
- "time": "30/03/2022"  "category": "Food" 
- "amount": "1.0"  "description": "Chicken rice"  "paymentMethod": "DBS"  
- "time": "30/03/2022"  "category": "Food"
- "amount": "1.0"  "description": "Katsudon"  "paymentMethod": "Cash"  
- "time": "07/03/2022"  "category": "Food"
-# END EXPENDITURES
-# BEGIN CREDIT CARDS
- "totalExpenditure": "2.0"  "monthlyCardLimit": "10000.0"  "nameOfCard": "DBS"  
- "cashback": "1.0"
- "totalExpenditure": "0.0"  "monthlyCardLimit": "20000.0"  "nameOfCard": "OCBC"  
- "cashback": "4.0"
-# END CREDIT CARDS
-# BEGIN INCOME SOURCES
- "amount": "200"  "category": "Allowance"
- "amount": "500"  "category": "Investment" 
-# END INCOME SOURCES
-```
-
-<br/>
 
 ## FAQ
 
