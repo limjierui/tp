@@ -788,14 +788,8 @@ the `data.txt` file found in the current directory into a new folder where you w
 | Update    | `update /cc [INDEX] /n [NEW_CARD_NAME] /cb [NEW_CASHBACK] /cl [NEW_CREDIT_LIMIT]`<br/>For example: `update /cc 1 /n OCBC /cb 1.5 /cl 500` <br/> Updates the first credit card on your credit card list to have a name of 'OCBC' with a cashback of 1.5% and a monthly spending limit of $500. |
 | Exit      | `bye`<br/> Ends the `MindMyMoney` application.                                                                                                                                                                                                                                                |
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 
+<br/>
 
 ## Command Summary (Income)
 
