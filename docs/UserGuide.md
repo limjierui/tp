@@ -543,7 +543,7 @@ Use the `list /cc` command to view the current indexes of your credit cards.
 * `[INDEX]` refers to the index of credit card in your credit card list in which you want to delete.
     * Enter `1` if you want to delete the first credit card in your credit card list.
 
-#### Expected Outcome
+#### Expected Outcome:
 
 For example: `delete /cc 1`<br/>
 Deletes the first credit card on your credit card list.
@@ -689,6 +689,7 @@ Category: Salary
 > **⚠️Warning⚠️**
 > - Any input in `[NEW_CATEGORY]` not in the accepted income list of categories will be rejected.
 <br/>
+<br/>
 
 ### Remove an income: `delete`
 
@@ -787,6 +788,7 @@ the `data.txt` file found in the current directory into a new folder where you w
 | Update    | `update /cc [INDEX] /n [NEW_CARD_NAME] /cb [NEW_CASHBACK] /cl [NEW_CREDIT_LIMIT]`<br/>For example: `update /cc 1 /n OCBC /cb 1.5 /cl 500` <br/> Updates the first credit card on your credit card list to have a name of 'OCBC' with a cashback of 1.5% and a monthly spending limit of $500. |
 | Exit      | `bye`<br/> Ends the `MindMyMoney` application.                                                                                                                                                                                                                                                |
 
+<br/>
 <br/>
 <br/>
 <br/>
