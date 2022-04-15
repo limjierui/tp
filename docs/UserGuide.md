@@ -788,6 +788,8 @@ the `data.txt` file found in the current directory into a new folder where you w
 | Exit      | `bye`<br/> Ends the `MindMyMoney` application.                                                                                                                                                                                                                                                |
 
 <br/>
+<br/>
+<br/>
 
 ## Command Summary (Income)
 
