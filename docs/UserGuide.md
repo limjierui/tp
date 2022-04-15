@@ -688,7 +688,7 @@ Category: Salary
 
 > **⚠️Warning⚠️**
 > - Any input in `[NEW_CATEGORY]` not in the accepted income list of categories will be rejected.
-<br/>
+
 <br/>
 
 ### Remove an income: `delete`
